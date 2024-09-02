@@ -25,17 +25,29 @@ Contact::Contact(std::string first_name, std::string last_name, std::string nick
 	this->count++;
 }
 
-
+std::string	truncat(std::string str)
+{
+	str.insert(0, std::string("          ").erase(0, str.size()));
+    if (str.size() > 10)
+    {
+        str.resize(9);
+        str += '.';
+    }
+	return str;
+}
 
 void Contact::search_output()
 {
-	std::cout << "index :" << this->index << "|"
-				<< "first_name :" << this->first_name << "|"
-				<< "last_name :" << this->last_name << "|"
-				<< "nick_name :" << this->nick_name << "\n";
+	std::string str;
+
+	str = truncat(std::to_string(index)) + "|";
+	str += truncat(first_name) + "|";
+	str += truncat(last_name) + "|";
+	str += truncat(nick_name) + "\n";
+	std::cout << str;
 }
 
-void Contact::tostring()
+void Contact::toString()
 {
 	std::cout << "index :" << this->index << ", " 
 			<< "first_name :" << this->first_name << ", "
