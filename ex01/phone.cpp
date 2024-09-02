@@ -11,6 +11,14 @@ bool is_str_digit(std::string str)
 			return false;
 	return true;
 }
+bool is_str_index(std::string str)
+{
+	if (std::isdigit(str[0]) == false || str.size() > 1)
+			return false;
+	if (int(str[0]) < 0 + 48 || int(str[0]) > 8 + 48)
+			return false;
+	return true;
+}
 bool is_str_alpha(std::string str)
 {
 	if (str.empty())
@@ -33,6 +41,8 @@ std::string	prompt(std::string msg, bool f(std::string))
 
 	std::cout << "enter your " << msg << " : ";
 	std::cin >> inp;
+	if (std::cin.eof())
+		exit(1);
 	if (!f(inp))
 	{
 		std::cerr << "\033[31m" "please enter a valid " << msg << "\033[0m" "\n";
@@ -58,10 +68,10 @@ void add_prompt(PhoneBook &pb)
 void search_prompt(PhoneBook pb)
 {
 	std::string	inp;
+	int			index;
 
 	pb.toString();
-	std::cout << "give us the wanted user index: ";
-	std::cin >> inp;
+	inp = prompt("index (0, 8)", is_str_index);
 	pb.getContactByIndex(stoi(inp));
 }
 
@@ -76,19 +86,19 @@ void file_phonebook(PhoneBook &pb)
 	pb.add(c3);
 	Contact *c4 = new Contact("dd", "dd", "dd", "dd", "dd");
 	pb.add(c4);
-	Contact *c5 = new Contact("dd", "dd", "dd", "dd", "dd");
+	Contact *c5 = new Contact("ee", "ee", "ee", "ee", "ee");
 	pb.add(c5);
-	Contact *c6 = new Contact("dd", "dd", "dd", "dd", "dd");
+	Contact *c6 = new Contact("ff", "ff", "ff", "ff", "ff");
 	pb.add(c6);
-	Contact *c7 = new Contact("dd", "dd", "dd", "dd", "dd");
+	Contact *c7 = new Contact("gg", "gg", "gg", "gg", "gg");
 	pb.add(c7);
-	Contact *c8 = new Contact("dd", "dd", "dd", "dd", "dd");
+	Contact *c8 = new Contact("hh", "hh", "hh", "hh", "hh");
 	pb.add(c8);
-	Contact *c9 = new Contact("dd", "dd", "dd", "dd", "dd");
+	Contact *c9 = new Contact("ii", "ii", "ii", "ii", "ii");
 	pb.add(c9);
-	Contact *c10 = new Contact("dd", "dd", "dd", "dd", "dd");
+	Contact *c10 = new Contact("jj", "jj", "jj", "jj", "jj");
 	pb.add(c10);
-	Contact *c11 = new Contact("dd", "dd", "dd", "dd", "dd");
+	Contact *c11 = new Contact("kk", "kk", "kk", "kk", "kk");
 	pb.add(c11);
 }
 
@@ -103,7 +113,7 @@ int main(int argc, char const *argv[])
 	{
 		std::cout << "\033[50m" "enter a commad (ADD, SEARCH, EXIT): "  "\033[0m";
 		std::cin >> inp;
-		if(inp[0] == '\0')
+		if(std::cin.eof())
 			exit(1);
 		str_to_upper(inp);
 		if (inp == "ADD")
@@ -111,13 +121,5 @@ int main(int argc, char const *argv[])
 		else if (inp == "SEARCH")
 			search_prompt(pb);
 	}
-
-
-
-	// pb.getContacts()[2]->tostring();
-	// c3->search_output();
-
-	// c4->tostring();
-	
 	return 0;
 }

@@ -16,10 +16,11 @@ class Contact
 		std::string tuncate(std::string str);
     public:
 		Contact();
-        Contact(std::string first_name, std::string last_name, std::string nick_name,
-        	std::string phone_number, std::string darkest_secret);
-        int getIndex(void) {return index;}
-        void search_output();
+        Contact(std::string first_name, std::string last_name,
+				std::string nick_name, std::string phone_number,
+				std::string darkest_secret);
+        // int getIndex(void) {return index;}
+        void search_output(int index);
         void toString();
 };
 
