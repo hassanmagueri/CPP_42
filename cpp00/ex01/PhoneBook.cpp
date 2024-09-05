@@ -8,8 +8,15 @@ PhoneBook::PhoneBook()
 	index = 0;
 }
 
+PhoneBook::~PhoneBook()
+{
+	delete [] *contacts;
+}
+
 void PhoneBook::add(Contact *contact)
 {
+	if (size >= 8)
+		delete(this->contacts[index % 8]);
 	this->contacts[index % 8] = contact;
 	if (this->size < 8)
 		++this->size;

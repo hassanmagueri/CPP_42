@@ -40,7 +40,8 @@ std::string	prompt(std::string msg, bool f(std::string))
 	std::string inp;
 
 	std::cout << "enter your " << msg << " : ";
-	std::cin >> inp;
+	// std::cin >> inp;
+	std::getline(std::cin, inp);
 	if (std::cin.eof())
 		exit(1);
 	if (!f(inp))
@@ -112,7 +113,8 @@ int main(int argc, char const *argv[])
 	while (inp != "EXIT")
 	{
 		std::cout << "\033[50m" "enter a commad (ADD, SEARCH, EXIT): "  "\033[0m";
-		std::cin >> inp;
+		// std::cin >> inp;
+		std::getline(std::cin, inp);
 		if(std::cin.eof())
 			exit(1);
 		str_to_upper(inp);

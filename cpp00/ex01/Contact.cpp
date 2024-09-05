@@ -23,6 +23,11 @@ Contact::Contact()
 	this->index = -1;
 }
 
+Contact::~Contact()
+{
+	std::cout << "end: " << this->index << std::endl;
+}
+
 Contact::Contact(std::string first_name, std::string last_name, std::string nick_name,
 			std::string phone_number, std::string darkest_secret)
 {

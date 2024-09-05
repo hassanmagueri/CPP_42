@@ -8,6 +8,7 @@ class PhoneBook
         int     index;
     public:
         PhoneBook();
+        ~PhoneBook();
         bool     getContactByIndex(int index);
         void    add(Contact *contact);
         void    toString(void);

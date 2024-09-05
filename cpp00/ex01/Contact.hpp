@@ -19,7 +19,7 @@ class Contact
         Contact(std::string first_name, std::string last_name,
 				std::string nick_name, std::string phone_number,
 				std::string darkest_secret);
-        // int getIndex(void) {return index;}
+		~Contact();
         void search_output(int index);
         void toString();
 };

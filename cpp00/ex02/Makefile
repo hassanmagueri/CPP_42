@@ -7,7 +7,8 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-.o : .c
+
+.o: .c
 	$(CC) -c $@ -o $<
 
 clean:
