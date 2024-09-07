@@ -1,7 +1,7 @@
-CC		= c++ -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
-SRC		= File.cpp main.cpp
-OBJ		= $(SRC:.cpp=.o) 
-NAME	= main
+CC		= c++ -Wall -Wextra -Werror
+SRC		= main.cpp Harl.cpp
+OBJ		= $(SRC:.cpp=.o)
+NAME	= harl
 
 all: $(NAME)
 
