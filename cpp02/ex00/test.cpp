@@ -5,10 +5,8 @@ private:
     int _fixedPoint;
 
 public:
-    // Default constructor
     Fixed() : _fixedPoint(0) {}
 
-    // Copy constructor
     Fixed(const Fixed &other) {
         std::cout << "Copy constructor called\n";
         this->_fixedPoint = other.getRawBits();  // Directly copy the value

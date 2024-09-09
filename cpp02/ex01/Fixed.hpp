@@ -8,10 +8,13 @@ private:
 	int					_fixedPoint;
 public:
 	Fixed();
+	Fixed(const int);
+	Fixed(const float);
 	Fixed(const Fixed &);
 	Fixed& operator=(const Fixed &);
-	Fixed& operator++();
 	~Fixed();
+	float	toFloat(void) const;
+	float	toInt(void) const;
 	int		getRawBits(void) const;
 	void	setRawBits(int);
 };

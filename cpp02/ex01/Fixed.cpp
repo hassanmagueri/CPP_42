@@ -1,11 +1,26 @@
 #include "Fixed.hpp"
 #include <iostream>
-
+#include <cmath>
 
 Fixed::Fixed()
 {
 	_fixedPoint = 0;
 	std::cout << "Default constructor called\n";
+}
+
+Fixed::Fixed(const int integer)
+{
+	_fixedPoint = integer << 8;
+	std::cout << "Default constructor called\n";
+}
+
+Fixed::Fixed(const float floatPoint)
+{
+	_fixedPoint = 0;
+	_fixedPoint = roundf(floatPoint) << _fracBits;
+	_fixedPoint = (floatPoint % 1);
+	std::cout << "float constructor called\n";
+	// _fixedPoint = integer << 8;
 }
 
 Fixed::Fixed(const Fixed &other)
@@ -35,10 +50,4 @@ void Fixed::setRawBits(int const raw)
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called\n";
-}
-
-Fixed &Fixed::operator++()
-{
-	_fixedPoint++;
-	return *this;
 }
