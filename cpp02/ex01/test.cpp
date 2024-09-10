@@ -61,6 +61,10 @@ int main()
     fixedPoint = floatPoint * (1 << _fracBits);
     printBits(fixedPoint);
     // printBits(floatPoint * (2 ^ _fracBits));
-    std::cout << (1 << _fracBits) << std::endl;
+    float actualFloat = fixedPoint / (float)(1 << _fracBits);
+
+    // Print the number in decimal format
+    std::cout << "Fixed-point as decimal: " << actualFloat << std::endl;
+    std::cout << (float) (fixedPoint / (float)(1 << _fracBits)) << std::endl;
     return 0;
 }
