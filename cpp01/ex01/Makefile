@@ -8,7 +8,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-.o: .c
+%.o: %.cpp
 	$(CC) -c $< -o $@
 
 clean:

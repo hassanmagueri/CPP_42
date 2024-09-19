@@ -1,5 +1,5 @@
 CC		= c++ -std=c++98 -Wall -Wextra -Werror
-SRC		= phone.cpp PhoneBook.cpp Contact.cpp
+SRC		= main.cpp PhoneBook.cpp Contact.cpp
 OBJ		= $(SRC:.cpp=.o)
 NAME	= phone
 
@@ -7,7 +7,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-.o : .c
+.o : .cpp
 	$(CC) -c $@ -o $<
 
 clean:

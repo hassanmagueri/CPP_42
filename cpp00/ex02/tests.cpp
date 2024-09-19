@@ -22,7 +22,6 @@ int		main( void ) {
 	int	const				amounts[]	= { 42, 54, 957, 432, 1234, 0, 754, 16576 };
 	size_t const			amounts_size( sizeof(amounts) / sizeof(int) );
 	accounts_t				accounts( amounts, amounts + amounts_size );
-									//index:0;amount:42;created
 	accounts_t::iterator	acc_begin	= accounts.begin();
 	accounts_t::iterator	acc_end		= accounts.end();
 
@@ -38,28 +37,28 @@ int		main( void ) {
 	ints_t::iterator	wit_begin	= withdrawals.begin();
 	ints_t::iterator	wit_end		= withdrawals.end();
 
-	Account::displayAccountsInfos(); //accounts:8;total:20049;deposits:0;withdrawals:0
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref(&Account::displayStatus)); //index:0;amount:42;deposits:0;withdrawals:0...
+	Account::displayAccountsInfos();
+	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
 	for ( acc_int_t it( acc_begin, dep_begin );
 		  it.first != acc_end && it.second != dep_end;
 		  ++(it.first), ++(it.second) ) {
 
-		(*(it.first)).makeDeposit( *(it.second) );//index:0;p_amount:42;deposit:5;amount:47;nb_deposits:1
+		(*(it.first)).makeDeposit( *(it.second) );
 	}
 
-	Account::displayAccountsInfos();//accounts:8;total:21524;deposits:8;withdrawals:0
-	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus));
+	Account::displayAccountsInfos();
+	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
 	for ( acc_int_t it( acc_begin, wit_begin );
 		  it.first != acc_end && it.second != wit_end;
 		  ++(it.first), ++(it.second) ) {
 
-		(*(it.first)).makeWithdrawal( *(it.second) );//index:0;amount:47;deposits:1;withdrawals:0
+		(*(it.first)).makeWithdrawal( *(it.second) );
 	}
 
-	Account::displayAccountsInfos(); //accounts:8;total:12442;deposits:8;withdrawals:6
-	std::for_each(acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) ); //index:0;amount:47;deposits:1;withdrawals:0
+	Account::displayAccountsInfos();
+	std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
 
 	return 0;
 }

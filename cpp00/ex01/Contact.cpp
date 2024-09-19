@@ -1,13 +1,10 @@
 #include "Contact.hpp"
 
-// size_t Contact::count = 0;
-
-std::string	truncat(std::string str)
+std::string	Contact::truncate(std::string str)
 {
-	str.insert(0, std::string("          ").erase(0, str.size()));
-    if (str.size() > TRUNCET_LEN)
+	 if (str.size() > TRUNCATE_LEN)
     {
-        str.resize(TRUNCET_LEN - 1);
+        str.resize(TRUNCATE_LEN - 1);
         str += '.';
     }
 	return str;
@@ -23,11 +20,6 @@ Contact::Contact()
 	this->index = -1;
 }
 
-Contact::~Contact()
-{
-	std::cout << "end: " << this->index << std::endl;
-}
-
 Contact::Contact(std::string first_name, std::string last_name, std::string nick_name,
 			std::string phone_number, std::string darkest_secret)
 {
@@ -40,13 +32,10 @@ Contact::Contact(std::string first_name, std::string last_name, std::string nick
 
 void Contact::search_output(int index)
 {
-	std::string str;
-
-	str = truncat(std::to_string(index)) + "|";
-	str += truncat(first_name) + "|";
-	str += truncat(last_name) + "|";
-	str += truncat(nick_name) + "\n";
-	std::cout << str;
+	std::cout << std::setw(11) << truncate(std::to_string(index)) + "|";
+	std::cout << std::setw(11) << truncate(first_name) + "|";
+	std::cout << std::setw(11) << truncate(last_name) + "|";
+	std::cout << std::setw(11) << truncate(nick_name) + "\n";
 }
 
 void Contact::toString()

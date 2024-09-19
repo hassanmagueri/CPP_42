@@ -6,8 +6,10 @@ std::string File::strReplace(std::string str, std::string search, std::string re
 
     if ((index = str.find(search)) != std::string::npos)
     {
-        str = str.substr(0, index) + replace + str.substr(index + search.size());
-        return strReplace(str, search, replace);
+        // str = str.substr(0, index) + replace + str.substr(index + search.size());
+        return (str.substr(0, index) + replace +
+                    strReplace(str.substr(index + search.size()), 
+                        search, replace));
     }
     return str;
 }

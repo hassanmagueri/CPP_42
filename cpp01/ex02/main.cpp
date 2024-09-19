@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main(int argc, char const *argv[])
+int main()
 {
 	std::string string = "HI THIS IS BRAIN";
 	std::string *stringPTR = &string;

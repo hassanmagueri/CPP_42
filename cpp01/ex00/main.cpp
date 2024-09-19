@@ -1,10 +1,10 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-int main(int argc, char const *argv[])
+int main()
 {
 	randomChump("hassane");
-	Zombie *z = newZombie("brahim");
+	Zombie *z = newZombie("ayoub");
 	delete z;
 	return 0;
 }

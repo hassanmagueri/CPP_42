@@ -6,9 +6,10 @@ NAME	= zombie
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	echo ${OBJ}
 	$(CC) $(OBJ) -o $(NAME)
 
-.o: .c
+%.o: %.cpp
 	$(CC) -c $< -o $@
 
 clean:

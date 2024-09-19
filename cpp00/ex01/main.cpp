@@ -15,7 +15,7 @@ bool is_str_index(std::string str)
 {
 	if (std::isdigit(str[0]) == false || str.size() > 1)
 			return false;
-	if (int(str[0]) < 0 + 48 || int(str[0]) > 8 + 48)
+	if (int(str[0]) < '0' || int(str[0]) > '8')
 			return false;
 	return true;
 }
@@ -24,9 +24,10 @@ bool is_str_alpha(std::string str)
 	if (str.empty())
 		return false;
 	for (int i = 0; i < str.size(); i++)
-		if (std::isalpha(str[i]) == false)
+		if ((std::isalpha(str[i]) == false && str[i] != ' ' && str[i] != '_' && str[i] != '-'))
 			return false;
 	return true;
+
 }
 void str_to_upper(std::string &str)
 {
@@ -40,29 +41,29 @@ std::string	prompt(std::string msg, bool f(std::string))
 	std::string inp;
 
 	std::cout << "enter your " << msg << " : ";
-	// std::cin >> inp;
 	std::getline(std::cin, inp);
+	while (inp.find("\t") != std::string::npos)
+		inp.replace(inp.find("\t"), 1, "    ", 4);
 	if (std::cin.eof())
-		exit(1);
+		std::exit(1);
 	if (!f(inp))
 	{
 		std::cerr << "\033[31m" "please enter a valid " << msg << "\033[0m" "\n";
-		prompt(msg, f);
+		return prompt(msg, f);
 	}
 	return inp;
 }
 
 void add_prompt(PhoneBook &pb)
 {
-	int i;
-	Contact *cnt;
+	Contact cnt;
 
 	std::string first_name = prompt("first name", is_str_alpha);
 	std::string last_name = prompt("last name", is_str_alpha);
 	std::string nick_name = prompt("nickname", ret_true);
 	std::string phone_number = prompt("phone number", is_str_digit);
 	std::string darkest_secret = prompt("darkest secret", ret_true);
-	cnt = new Contact(first_name, last_name, nick_name, phone_number, darkest_secret);
+	cnt = Contact(first_name, last_name, nick_name, phone_number, darkest_secret);
 	pb.add(cnt);
 }
 
@@ -78,46 +79,43 @@ void search_prompt(PhoneBook pb)
 
 void file_phonebook(PhoneBook &pb)
 {
-	
-	Contact *c1 = new Contact("aa", "aa", "aa", "aa", "aa");
+	Contact c1 = Contact("aa", "aa", "aa", "aa", "aa");
 	pb.add(c1);
-	Contact *c2 = new Contact("bb", "bb", "bb", "bb", "bb");
+	Contact c2 = Contact("bb", "bb", "bb", "bb", "bb");
 	pb.add(c2);
-	Contact *c3 = new Contact("cc", "cc", "cc", "cc", "cc");
+	Contact c3 = Contact("cc", "cc", "cc", "cc", "cc");
 	pb.add(c3);
-	Contact *c4 = new Contact("dd", "dd", "dd", "dd", "dd");
+	Contact c4 = Contact("dd", "dd", "dd", "dd", "dd");
 	pb.add(c4);
-	Contact *c5 = new Contact("ee", "ee", "ee", "ee", "ee");
+	Contact c5 = Contact("ee", "ee", "ee", "ee", "ee");
 	pb.add(c5);
-	Contact *c6 = new Contact("ff", "ff", "ff", "ff", "ff");
+	Contact c6 = Contact("ff", "ff", "ff", "ff", "ff");
 	pb.add(c6);
-	Contact *c7 = new Contact("gg", "gg", "gg", "gg", "gg");
+	Contact c7 = Contact("gg", "gg", "gg", "gg", "gg");
 	pb.add(c7);
-	Contact *c8 = new Contact("hh", "hh", "hh", "hh", "hh");
+	Contact c8 = Contact("hh", "hh", "hh", "hh", "hh");
 	pb.add(c8);
-	Contact *c9 = new Contact("ii", "ii", "ii", "ii", "ii");
+	Contact c9 = Contact("ii", "ii", "ii", "ii", "ii");
 	pb.add(c9);
-	Contact *c10 = new Contact("jj", "jj", "jj", "jj", "jj");
+	Contact c10 = Contact("jj", "jj", "jj", "jj", "jj");
 	pb.add(c10);
-	Contact *c11 = new Contact("kk", "kk", "kk", "kk", "kk");
+	Contact c11 = Contact("kk", "kk", "kk", "kk", "kk");
 	pb.add(c11);
 }
 
 
-int main(int argc, char const *argv[])
+int main()
 {
-	std::string inp = "";
-	PhoneBook pb;
+	PhoneBook	pb;
+	std::string inp;
 
-	file_phonebook(pb);
+	inp = "";
 	while (inp != "EXIT")
 	{
 		std::cout << "\033[50m" "enter a commad (ADD, SEARCH, EXIT): "  "\033[0m";
-		// std::cin >> inp;
 		std::getline(std::cin, inp);
 		if(std::cin.eof())
-			exit(1);
-		str_to_upper(inp);
+			std::exit(1);
 		if (inp == "ADD")
 			add_prompt(pb);
 		else if (inp == "SEARCH")
