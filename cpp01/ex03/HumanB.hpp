@@ -9,11 +9,8 @@ class HumanB
         std::string name;
         Weapon      *weapon;
     public:
-        HumanB(std::string name)
-                {this->name = name;}
-
-        void    setWeapon(Weapon &weapon)
-                    {this->weapon = &weapon;}
+        HumanB(std::string name);
+        void    setWeapon(Weapon &weapon);
         void    attack(void);
 };
 
