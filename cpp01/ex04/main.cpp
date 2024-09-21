@@ -7,10 +7,18 @@ int main(int ac, char *av[])
         std::cerr << "enter a valid\n";
         return 1;
     }
-    File file(av[1]);
+    std::string fileName = av[1];
+    std::string search = av[2];
+    std::string replace = av[3];
+    if (search == "")
+    {
+        std::cerr << "invalid arg\n";
+        return 1;
+    }
+    File file(fileName);
     try
     {
-        file.readFileAndReplace(av[2], av[3]);
+        file.readFileAndReplace(search, replace);
     }catch (const std::runtime_error& e)
     {
         std::cerr <<  "Caught an exception: " << e.what() << std::endl;

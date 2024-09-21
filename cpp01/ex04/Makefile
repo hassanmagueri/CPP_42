@@ -1,6 +1,7 @@
 CC		= c++ -Wall -Wextra -Werror -std=c++98
 SRC		= File.cpp main.cpp
-OBJ		= $(SRC:.cpp=.o) 
+OBJ		= $(SRC:.cpp=.o)
+HDR		= Harl.hpp
 NAME	= main
 
 all: $(NAME)
@@ -8,7 +9,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(HDR)
 	$(CC) -c $< -o $@
 
 clean:

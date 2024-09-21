@@ -3,8 +3,8 @@
 
 class Harl
 {
-
 typedef void (Harl::*ptrMebFun)(void);
+
 typedef struct
 {
     std::string level;

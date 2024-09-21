@@ -48,27 +48,3 @@ void Harl::complain(std::string &level)
 	for (; i < 4 && levels[i] != level; i++);
 	(this->*ptrFun[i])();
 }
-
-// void Harl::complain(std::string str)
-// {
-//     if (str != "debug" && str != "info" &&
-//             str != "warning" && str != "error")
-//         return ;
-//     switch (str[0])
-//     {
-//     case 'd':
-//         debug();
-//         break;
-//     case 'i':
-//         info();
-//         break;
-//     case 'w':
-//         warning();
-//         break;
-//     case 'e':
-//         error();
-//         break;
-//     default:
-//         break;
-//     }
-// }

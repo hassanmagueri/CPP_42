@@ -1,6 +1,7 @@
 CC		= c++ -Wall -Wextra -Werror
 SRC		= main.cpp Harl.cpp
 OBJ		= $(SRC:.cpp=.o)
+HDR		= Harl.hpp
 NAME	= harlFilter
 
 all: $(NAME)
@@ -8,7 +9,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.cpppp
+%.o: %.cpp $(HDR)
 	$(CC) -c $< -o $@
 
 clean:

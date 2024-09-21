@@ -10,7 +10,7 @@ class File
 
         std::string strReplace(std::string str, std::string search, std::string replace);
     public:
-        File(std::string name) {this->name = name;}
+        File(std::string name);
 
 
         // \n at the end

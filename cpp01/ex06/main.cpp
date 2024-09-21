@@ -7,7 +7,7 @@ int main(int ac, char *av[])
     (void)ac;
     if (ac != 2)
         return 1;
-    std::string level =av[1];
+    std::string level = av[1];
     h.complain(level);
     return 0;
 }
