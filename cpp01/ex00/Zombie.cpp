@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 11:38:37 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/22 15:18:45 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
 Zombie::Zombie(std::string name)
 {
     this->name = name;
-    announce();
 }
 
 void Zombie::announce(void)
@@ -13,5 +24,5 @@ void Zombie::announce(void)
 
 Zombie::~Zombie()
 {
-    std::cout << this->name << std::endl;
+    std::cout << this->name << " : destroyed" << std::endl;
 }

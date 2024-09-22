@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   File.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 11:39:41 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/22 13:16:17 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "File.hpp"
 
 File::File(std::string name) { this->name = name; }
@@ -6,6 +18,8 @@ std::string File::strReplace(std::string str, std::string search, std::string re
 {
 	size_t index;
 
+	if (search == "")
+		return str;
 	if ((index = str.find(search)) != std::string::npos)
 	{
 		return (str.substr(0, index) + replace +
@@ -25,16 +39,15 @@ std::string File::readFileAndReplace(std::string search, std::string replace)
 		throw std::runtime_error("Error: Could not open file " + this->name);
 	std::ofstream outfile(this->name + ".replace");
 	if (!outfile)
-		throw std::runtime_error("Error: Could not create file " + this->name);
-	while (!std::getline(infile, line).eof())
 	{
-		buffer += strReplace(line, search, replace);
-		if (search != "\n")
-			buffer += "\n";
+		infile.close();
+		throw std::runtime_error("Error: Could not create file " + this->name);
 	}
+	while (!std::getline(infile, line).eof())
+		buffer += line + "\n";
 	buffer += line;
-	outfile << buffer;
-	outfile.close();
+	outfile << strReplace(buffer, search, replace);
 	infile.close();
-	return buffer;
+	outfile.close();
+	return (buffer);
 }

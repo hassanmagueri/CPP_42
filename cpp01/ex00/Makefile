@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/09/22 11:38:28 by emagueri          #+#    #+#              #
+#    Updated: 2024/09/22 11:38:28 by emagueri         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC		= c++ -Wall -Wextra -Werror
 SRC		= main.cpp Zombie.cpp randomChump.cpp newZombie.cpp
 OBJ		= $(SRC:.cpp=.o)

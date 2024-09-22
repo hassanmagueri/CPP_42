@@ -1,5 +1,20 @@
-#include <iostream>
-#include <string>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 11:39:55 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/22 13:09:18 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef HARL_HPP
+# define HARL_HPP
+
+# include <iostream>
+# include <string>
 
 class Harl
 {
@@ -10,5 +25,8 @@ private:
     void error(void);
     void func(void);
 public:
-    void complain(std::string &);
+    Harl();
+    void complain(std::string level);
 };
+
+# endif

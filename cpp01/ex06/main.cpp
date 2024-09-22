@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 11:40:10 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/22 13:28:33 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
 int main(int ac, char *av[])
@@ -7,7 +19,6 @@ int main(int ac, char *av[])
     (void)ac;
     if (ac != 2)
         return 1;
-    std::string level = av[1];
-    h.complain(level);
+    h.complain(av[1]);
     return 0;
 }

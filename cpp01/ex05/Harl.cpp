@@ -1,8 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 11:39:51 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/22 15:29:22 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
+
+Harl::Harl()
+{
+}
 
 void Harl::debug(void)
 {
-    std::cout << "[ WARNING ]\n";
+    std::cout << "[ DEBUG ]\n";
 	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special\n";
 	std::cout << "ketchup burger. I really do!\n";
 }
@@ -32,7 +48,7 @@ void Harl::func(void)
 	
 }
 
-void Harl::complain(std::string &level)
+void Harl::complain(std::string level)
 {
 	int i = 0;
 

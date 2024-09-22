@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 11:40:05 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/22 15:45:23 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 
 void Harl::debug(void)
@@ -33,35 +45,36 @@ void Harl::func(void)
 
 int exit_e()
 {
+	std::cout << "[ Probably complaining about insignificant problems ]\n";
 	exit(1);
 	return 1;
 }
 
-void Harl::complain(std::string &level)
+void Harl::complain(std::string level)
 {
 	const size_t size = 4;
 
 	(level != "DEBUG" && level != "INFO" && level != "WARNING" && level != "ERROR" && exit_e());
-	t_fun funcs[size] = 
+	ptrMebFun funcs[size] = 
 	{
-		(t_fun){"DEBUG", &Harl::debug},
-		(t_fun){"INFO", &Harl::info},
-		(t_fun){"WARNING", &Harl::warning},
-		(t_fun){"ERROR", &Harl::error}
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
 	};
 
 	switch (level[0])
 	{
 	case 'D':
-		(this->*(funcs[0].ptrMebFun))();
+		(this->*(funcs[0]))();
 	case 'I':
-		(this->*(funcs[1].ptrMebFun))();
+		(this->*(funcs[1]))();
 	case 'W':
-		(this->*(funcs[2].ptrMebFun))();
+		(this->*(funcs[2]))();
 	case 'E':
-		(this->*(funcs[3].ptrMebFun))();
+		(this->*(funcs[3]))();
 	default:
 		break;
 	}
-
+	
 }

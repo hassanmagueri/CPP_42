@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/22 11:39:45 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/22 12:40:15 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "File.hpp"
 
 int main(int ac, char *av[])
@@ -10,11 +22,6 @@ int main(int ac, char *av[])
     std::string fileName = av[1];
     std::string search = av[2];
     std::string replace = av[3];
-    if (search == "")
-    {
-        std::cerr << "invalid arg\n";
-        return 1;
-    }
     File file(fileName);
     try
     {
