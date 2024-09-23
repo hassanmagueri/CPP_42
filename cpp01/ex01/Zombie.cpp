@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 11:38:53 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/22 11:38:53 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/23 13:50:18 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Zombie::Zombie(std::string name)
 {
     this->name = name;
-    announce();
 }
 
 Zombie::Zombie() { }
@@ -32,5 +31,5 @@ void Zombie::announce(void)
 
 Zombie::~Zombie()
 {
-    std::cout << this->name << std::endl;
+     std::cout << this->name << " : destroyed" << std::endl;
 }
