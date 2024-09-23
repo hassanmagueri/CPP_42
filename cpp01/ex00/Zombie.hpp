@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 11:38:40 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/22 11:38:40 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/23 15:26:36 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class Zombie{
 	private:
 		std::string name;
 	public:
+		Zombie();
 		Zombie(std::string name);
 		void	announce(void);
 		~Zombie();

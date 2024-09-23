@@ -32,6 +32,5 @@ void PhoneBook::toString()
 	for (int i = 0; i < size; i++)
 	{
 		contacts[i].search_output(i);
-		std::cout << "\n";
 	}
 }

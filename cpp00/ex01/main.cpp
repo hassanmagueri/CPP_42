@@ -2,11 +2,12 @@
 
 bool ret_true(std::string str)
 {
+	str += "";
 	return true;
 }
 bool is_str_digit(std::string str)
 {
-	for (int i = 0; i < str.size(); i++)
+	for (size_t i = 0; i < str.size(); i++)
 		if (std::isdigit(str[i]) == false)
 			return false;
 	return true;
@@ -15,7 +16,7 @@ bool is_str_index(std::string str)
 {
 	if (std::isdigit(str[0]) == false || str.size() > 1)
 			return false;
-	if (int(str[0]) < '0' || int(str[0]) > '8')
+	if (int(str[0]) < '0' || int(str[0]) > '7')
 			return false;
 	return true;
 }
@@ -23,7 +24,7 @@ bool is_str_alpha(std::string str)
 {
 	if (str.empty())
 		return false;
-	for (int i = 0; i < str.size(); i++)
+	for (size_t i = 0; i < str.size(); i++)
 		if ((std::isalpha(str[i]) == false && str[i] != ' ' && str[i] != '_' && str[i] != '-'))
 			return false;
 	return true;
@@ -31,7 +32,7 @@ bool is_str_alpha(std::string str)
 }
 void str_to_upper(std::string &str)
 {
-	for (int i = 0; i < str.size(); i++)
+	for (size_t i = 0; i < str.size(); i++)
 		if (islower(str[i]))
 			str[i] = char(toupper(str[i]));
 }
@@ -70,10 +71,9 @@ void add_prompt(PhoneBook &pb)
 void search_prompt(PhoneBook pb)
 {
 	std::string	inp;
-	int			index;
 
 	pb.toString();
-	inp = prompt("index (0, 8)", is_str_index);
+	inp = prompt("index (0, 7)", is_str_index);
 	pb.getContactByIndex(stoi(inp));
 }
 

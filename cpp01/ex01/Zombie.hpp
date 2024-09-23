@@ -6,14 +6,13 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 11:38:56 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/22 11:38:56 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/23 14:14:35 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __ZOMBIE_HPP__
 # define __ZOMBIE_HPP__
 # include <iostream>
-# define N 10
 
 class Zombie{
 	private:
