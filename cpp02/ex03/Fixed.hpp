@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/28 18:31:31 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/28 18:31:31 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __FIXED_HPP__
 #define __FIXED_HPP__
 #include <iostream>
@@ -15,7 +27,6 @@ public:
 	Fixed(const float);
 	Fixed(const Fixed &);
 	Fixed &operator=(const Fixed &);
-	friend std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 	float toFloat(void) const;
 	int toInt(void) const;
 	int getRawBits(void) const;
@@ -40,5 +51,7 @@ public:
 	static const Fixed &max(const Fixed &f1, const Fixed &f2);
 	~Fixed();
 };
+
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 
 #endif

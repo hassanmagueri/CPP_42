@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bsq.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/28 18:31:19 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/28 18:31:19 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Point.hpp"
 #include "Fixed.hpp"
 
 float getArea(Point p1, Point p2, Point p3)
 {
 	float area;
-
 
 	float n = (p1.getX() * (p2.getY() - p3.getY())).toFloat()
 			+ (p2.getX() * (p3.getY() - p1.getY())).toFloat()
@@ -17,10 +28,10 @@ float getArea(Point p1, Point p2, Point p3)
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	float area	=	getArea(a,b,c);
-	float area1	=	getArea(a,b,point);
-	float area2	=	getArea(a,point,c);
-	float area3	=	getArea(point,b,c);
+	float area = getArea(a,b,c);
+	float area1 = getArea(a,b,point);
+	float area2 = getArea(a,point,c);
+	float area3 = getArea(point,b,c);
 
 	if (area1 == 0 || area2 == 0 || area2 == 0)
 		return (false);
@@ -29,7 +40,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	return (false);
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
 	Point a(0,0);
 	Point b(0,5);

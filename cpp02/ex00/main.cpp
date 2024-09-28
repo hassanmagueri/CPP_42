@@ -1,18 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/28 18:29:50 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/28 18:29:50 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Fixed.hpp"
 
 int main(void)
 {
-	Fixed *a = new Fixed();
-	Fixed *b = ++a;
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
 
-	// Fixed b(a);
-	// Fixed c;
-	// c = a;
-	b->setRawBits(10);
-	std::cout << a->getRawBits() << std::endl;
-	std::cout << b->getRawBits() << std::endl;
-	// std::cout << c.getRawBits() << std::endl;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 	return 0;
 }
 

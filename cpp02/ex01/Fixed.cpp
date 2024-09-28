@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/28 18:29:59 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/28 18:29:59 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <iostream>
 #include <cmath>
@@ -11,7 +23,7 @@ Fixed::Fixed()
 Fixed::Fixed(const int integer)
 {
 	std::cout << "Int constructor called\n";
-	_fixedPoint = integer << 8;
+	_fixedPoint = integer << _fracBits;
 }
 
 Fixed::Fixed(const float floatPoint)
@@ -24,6 +36,17 @@ Fixed::Fixed(const Fixed &other)
 {
 	std::cout << "Copy constructor called\n";
 	*this = other;
+}
+
+int Fixed::getRawBits(void) const
+{
+	// std::cout << "getRawBits member function called\n";
+	return this->_fixedPoint;
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	this->_fixedPoint = raw;
 }
 
 Fixed &Fixed::operator=(const Fixed &other)
@@ -41,9 +64,6 @@ std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 
 float	Fixed::toFloat(void) const
 {
-	float floatPoint;
-
-	floatPoint = _fixedPoint / (float)(1 << _fracBits);
 	return (float)(_fixedPoint / (float)(1 << _fracBits));
 }
 
@@ -53,17 +73,6 @@ int	Fixed::toInt(void) const
 
 	integer = _fixedPoint >> _fracBits;
 	return (integer);
-}
-
-int Fixed::getRawBits(void) const
-{
-	// std::cout << "getRawBits member function called\n";
-	return this->_fixedPoint;
-}
-
-void Fixed::setRawBits(int const raw)
-{
-	this->_fixedPoint = raw;
 }
 
 Fixed::~Fixed()

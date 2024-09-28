@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/28 18:31:26 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/28 18:31:26 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed()
@@ -109,14 +121,14 @@ Fixed Fixed::operator++(int)
 
 Fixed &Fixed::operator--()
 {
-	this->_fixedPoint -= (1 << this->_fracBits);
+	this->_fixedPoint -= 1;
 	return *this;
 }
 
 Fixed Fixed::operator--(int)
 {
 	Fixed tmp = *this;
-	_fixedPoint -= (1 << _fracBits);
+	_fixedPoint -= 1;
 	return tmp;
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/28 18:30:54 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/28 18:30:54 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __FIXED_HPP__
 #define __FIXED_HPP__
 #include <iostream>
@@ -14,7 +26,6 @@ public:
 	Fixed(const float);
 	Fixed(const Fixed &);
 	Fixed& operator=(const Fixed &);
-	friend std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 	~Fixed();
 	float	toFloat(void) const;
 	int		toInt(void) const;
@@ -38,7 +49,7 @@ public:
 	static const	Fixed &min(const Fixed &f1,const  Fixed &f2);
 	static 			Fixed &max(Fixed &f1, Fixed &f2);
 	static const	Fixed &max(const Fixed &f1,const  Fixed &f2);
-
 };
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 
 #endif
