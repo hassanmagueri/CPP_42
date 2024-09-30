@@ -6,13 +6,14 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:29:45 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/28 18:32:31 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/28 19:11:00 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
+const int Fixed::_fracBits = 8;
 
 Fixed::Fixed()
 {

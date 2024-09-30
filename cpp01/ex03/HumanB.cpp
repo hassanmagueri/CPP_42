@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 11:39:18 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/22 15:28:09 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:46:45 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ HumanB::HumanB(std::string name)
 void HumanB::attack(void)
 {
 	std::cout << this->name << " attacks with their "
-			  << ((this->weapon) ? this->weapon->getType() : "(null)")
+			  <<  this->weapon->getType()
+			//   << ((this->weapon) ? this->weapon->getType() : "(null)")
 			  << std::endl;
 }
 

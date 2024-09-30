@@ -6,7 +6,7 @@
 #    By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 18:31:00 by emagueri          #+#    #+#              #
-#    Updated: 2024/09/28 18:31:00 by emagueri         ###   ########.fr        #
+#    Updated: 2024/09/29 16:25:56 by emagueri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp Fixed.hpp
 	$(CC) -c $< -o $@
 
 clean:

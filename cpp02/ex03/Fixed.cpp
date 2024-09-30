@@ -5,12 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 18:31:26 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/28 18:31:26 by emagueri         ###   ########.fr       */
+/*   Created: 2024/09/28 18:30:52 by emagueri          #+#    #+#             */
+/*   Updated: 2024/09/29 18:26:58 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+const int Fixed::_fracBits = 8;
 
 Fixed::Fixed()
 {
@@ -21,14 +23,13 @@ Fixed::Fixed()
 Fixed::Fixed(const int integer)
 {
 	// std::cout << "Int constructor called\n";
-	_fixedPoint = integer << 8;
+	_fixedPoint = integer << _fracBits;
 }
 
 Fixed::Fixed(const float floatPoint)
 {
 	// std::cout << "Float constructor called\n";
 	_fixedPoint = roundf(floatPoint * (1 << _fracBits));
-	// _fixedPoint = (floatPoint * (1 << _fracBits));
 }
 
 Fixed::Fixed(const Fixed &other)
@@ -40,7 +41,7 @@ Fixed::Fixed(const Fixed &other)
 Fixed &Fixed::operator=(const Fixed &other)
 {
 	// std::cout << "Copy assignment operator called\n";
-	this->_fixedPoint = other.getRawBits();
+	this->_fixedPoint = other._fixedPoint;
 	return *this;
 }
 
@@ -74,7 +75,7 @@ bool	Fixed::operator<=(const Fixed &fixe)  const
 	return this->toFloat() <= fixe.toFloat();
 }
 
-Fixed Fixed::operator+(const Fixed &fixe)
+Fixed Fixed::operator+(const Fixed &fixe)const
 {
 	float floatPoint;
 
@@ -82,7 +83,7 @@ Fixed Fixed::operator+(const Fixed &fixe)
 	return (Fixed(floatPoint));
 }
 
-Fixed Fixed::operator-(const Fixed &fixe)
+Fixed Fixed::operator-(const Fixed &fixe)const
 {
 	float floatPoint;
 
@@ -90,7 +91,7 @@ Fixed Fixed::operator-(const Fixed &fixe)
 	return (Fixed(floatPoint));
 }
 
-Fixed Fixed::operator*(const Fixed &fixe)
+Fixed Fixed::operator*(const Fixed &fixe)const
 {
 	float floatPoint;
 
@@ -98,7 +99,7 @@ Fixed Fixed::operator*(const Fixed &fixe)
 	return (Fixed(floatPoint));
 }
 
-Fixed Fixed::operator/(const Fixed &fixe)
+Fixed Fixed::operator/(const Fixed &fixe)const
 {
 	float floatPoint;
 

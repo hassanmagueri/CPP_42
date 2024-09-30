@@ -6,14 +6,14 @@
 #    By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 18:31:38 by emagueri          #+#    #+#              #
-#    Updated: 2024/09/28 18:31:38 by emagueri         ###   ########.fr        #
+#    Updated: 2024/09/29 16:24:36 by emagueri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++ -Wall -Wextra -Werror -std=c++98 
 SRC		= main.cpp Fixed.cpp Point.cpp bsq.cpp
 OBJ		= $(SRC:.cpp=.o)
-NAME	= fixed
+NAME	= bsp
 
 all: $(NAME)
 

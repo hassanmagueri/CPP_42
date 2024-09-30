@@ -6,13 +6,15 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:29:59 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/28 18:29:59 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/29 16:34:39 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 #include <cmath>
+
+const int Fixed::_fracBits = 8;
 
 Fixed::Fixed()
 {
@@ -40,7 +42,7 @@ Fixed::Fixed(const Fixed &other)
 
 int Fixed::getRawBits(void) const
 {
-	// std::cout << "getRawBits member function called\n";
+	std::cout << "getRawBits member function called\n";
 	return this->_fixedPoint;
 }
 
@@ -52,7 +54,7 @@ void Fixed::setRawBits(int const raw)
 Fixed &Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called\n";
-	this->_fixedPoint = other.getRawBits();
+	this->_fixedPoint = other._fixedPoint;
 	return *this;
 }
 

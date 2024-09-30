@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:31:43 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/28 18:31:43 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/29 19:11:05 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,4 @@ public:
     Fixed getY() const{return y;};
     ~Point();
 };
+bool bsp(Point const a, Point const b, Point const c, Point const point);
