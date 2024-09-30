@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:30:54 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/29 16:49:52 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:22:50 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
 	float toFloat(void) const;
 	int toInt(void) const;
 	int getRawBits(void) const;
-	void setRawBits(int);
+	void setRawBits(int const);
 
 	bool operator==(const Fixed &) const;
 	bool operator!=(const Fixed &) const;

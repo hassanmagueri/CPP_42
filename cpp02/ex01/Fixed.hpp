@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:30:02 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/28 19:14:40 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:22:14 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 typedef std::ostream ostream;
 
 class Fixed
+
 {
 private:
 	static const int	_fracBits;
@@ -31,7 +32,7 @@ public:
 	float	toFloat(void) const;
 	int		toInt(void) const;
 	int		getRawBits(void) const;
-	void	setRawBits(int);
+	void	setRawBits(int const);
 };
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
