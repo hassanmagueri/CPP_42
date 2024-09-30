@@ -6,24 +6,52 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:58:18 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 00:45:10 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/30 20:23:57 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap()
+{
+	_name = "unkown";
+	std::cout << "FragTrap " << this->_name << " Default constructor called\n";
+	_hitPoint = 100;
+	_energyPoint = 100;
+	_attackDamage = 30;
+}
+
 FragTrap::FragTrap(const std::string name):ClapTrap(name)
 {
-    _className = "FragTrap";
-    std::cout << "FragTrap " << this->_name << "Constructor(name) called\n";
-    _hitPoint = 100;
-    _energyPoint = 100;
-    _attackDamage = 30;
+	_className = "FragTrap";
+	std::cout << "FragTrap " << this->_name << "Constructor(name) called\n";
+	_hitPoint = 100;
+	_energyPoint = 100;
+	_attackDamage = 30;
+}
+
+FragTrap::FragTrap(FragTrap const &other)
+{
+	std::cout << "FragTrap " << this->_name << "Default copy constructor called\n";
+	*this = other;
+}
+
+FragTrap &FragTrap::operator=(FragTrap const &other)
+{
+	if (this != &other)
+	{
+		std::cout << "FragTrap " << this->_name << "Assign operator called\n";
+		this->_name = other._name;
+		this->_hitPoint = other._hitPoint;
+		this->_energyPoint = other._energyPoint;
+		this->_attackDamage = other._attackDamage;
+	}
+	return *this;
 }
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap " << _name << " high fives guys!\n";
+	std::cout << "FragTrap " << _name << " high fives guys!\n";
 }
 
 FragTrap::~FragTrap(void)

@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 15:21:04 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 15:25:20 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/30 20:02:12 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class DiamondTrap: public FragTrap, public ScavTrap
 {
 private:
-    std::string name;
-
-}
+    std::string _name;
+public:
+};
 
 #endif

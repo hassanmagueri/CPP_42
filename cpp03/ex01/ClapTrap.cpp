@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:49:44 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 00:34:17 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/09/30 20:14:53 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,15 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
 	std::cout << "ClapTrap " << this->_name << "Assign operator called\n";
-	this->_name = other._name;
-	this->_hitPoint = other._hitPoint;
-	this->_energyPoint = other._energyPoint;
-	this->_attackDamage = other._attackDamage;
+    if (this != &other)
+	{
+		this->_name = other._name;
+		this->_hitPoint = other._hitPoint;
+		this->_energyPoint = other._energyPoint;
+		this->_attackDamage = other._attackDamage;
+	}
 	return *this;
 }
-
-// void ClapTrap::setHitPoint(int hitPoint) { _hitPoint  = hitPoint;}
-// void ClapTrap::setEnergyPoint(int energyPoint) { _energyPoint = energyPoint;}
-// void ClapTrap::setAttackDamage(int attackDamage) { _attackDamage = attackDamage; }
 
 // ClapTrap <name> attacks <target>, causing <damage> points of damage!
 void ClapTrap::attack(const std::string &target)
