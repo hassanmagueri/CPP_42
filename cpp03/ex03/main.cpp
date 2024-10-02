@@ -6,18 +6,25 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:49:39 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 20:03:48 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/02 19:31:59 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-    ScavTrap st = ScavTrap("robot");
-    ScavTrap st2 = ScavTrap("robot2");
-    st.guardGate();
-    st.attack("kolo");
+    DiamondTrap dt = DiamondTrap("robot");
     
-    st.attack("kolo");
+    dt.guardGate();
+    dt.highFivesGuys();
+    dt.whoAmI();
+    dt.attack("kolo");
+    dt.takeDamage(444);
+    dt.beRepaired(100);
+    dt.highFivesGuys();
+    DiamondTrap any;
+    any.whoAmI();
+    for (int i = 0; i < 51; i++)
+        any.attack("jojo");
 }

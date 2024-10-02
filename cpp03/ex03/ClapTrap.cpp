@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:49:44 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 20:20:05 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/02 19:30:04 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 ClapTrap::ClapTrap()
 {
-	_className = "ClapTrap";
 	_name = "unknown";
 	std::cout << "ClapTrap " << this->_name << " Default constructor called\n";
 	_hitPoint = 10;
@@ -25,12 +24,11 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-	_className = "ClapTrap";
-	std::cout << "ClapTrap " << this->_name << "Constructor(name) called\n";
+	_name = name;
+	std::cout << "ClapTrap " << this->_name << " Constructor(name) called\n";
 	_hitPoint = 10;
 	_energyPoint = 10;
 	_attackDamage = 0;
-	name = this->_name;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -41,9 +39,9 @@ ClapTrap::ClapTrap(const ClapTrap &other)
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
+	std::cout << "ClapTrap " << this->_name << "Assign operator called\n";
 	if (this != &other)
 	{
-		std::cout << "ClapTrap " << this->_name << "Assign operator called\n";
 		this->_name = other._name;
 		this->_hitPoint = other._hitPoint;
 		this->_energyPoint = other._energyPoint;
@@ -66,7 +64,7 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->_energyPoint > 0 && this->_energyPoint > 0)
+	if (this->_energyPoint > 0 && this->_hitPoint > 0)
 	{
 		this->_hitPoint += amount;
 		this->_energyPoint--;
@@ -80,7 +78,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->_energyPoint > 0 && this->_energyPoint > 0)
+	if (this->_energyPoint > 0 && this->_hitPoint > 0)
 	{
 		this->_hitPoint -= amount;
 		if (this->_hitPoint < 0)

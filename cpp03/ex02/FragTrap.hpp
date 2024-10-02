@@ -6,13 +6,13 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:58:07 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 20:17:09 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/02 19:17:34 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP
+#ifndef FRAGTRAP_HPP
 
-#define FRAGTRAP
+#define FRAGTRAP_HPP
 #include <iostream>
 #include "ClapTrap.hpp"
 

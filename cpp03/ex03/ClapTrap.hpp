@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:49:34 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 00:37:57 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/02 18:30:28 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ class ClapTrap
 {
 protected:
     std::string _name;
-    std::string  _className;
     int         _hitPoint;
     int         _energyPoint;
     int         _attackDamage;

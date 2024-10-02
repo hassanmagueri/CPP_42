@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 12:49:39 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 00:43:46 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/02 19:08:12 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@ int main()
     FragTrap st = FragTrap("robot");
     st.highFivesGuys();
     st.attack("kolo");
-    
-    st.attack("kolo");
+    st.takeDamage(50);
+    st.takeDamage(20);
+    st.beRepaired(10);
+    st.takeDamage(40);
+    st.beRepaired(10);
+    st.attack("polo");
+    st = FragTrap();
+    for(int i = 0; i < 101; i++)
+        st.attack("pp");
 }
