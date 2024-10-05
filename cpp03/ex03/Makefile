@@ -6,7 +6,7 @@
 #    By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/24 12:49:31 by emagueri          #+#    #+#              #
-#    Updated: 2024/10/02 12:03:50 by emagueri         ###   ########.fr        #
+#    Updated: 2024/10/05 21:20:40 by emagueri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,6 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm  -f $(NAME)
 
 re: fclean all

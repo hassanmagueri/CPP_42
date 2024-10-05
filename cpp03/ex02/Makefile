@@ -6,14 +6,14 @@
 #    By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/24 12:49:31 by emagueri          #+#    #+#              #
-#    Updated: 2024/09/30 00:43:58 by emagueri         ###   ########.fr        #
+#    Updated: 2024/10/05 20:59:17 by emagueri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= c++ -Wall -Wextra -Werror -std=c++98
-SRC		= main.cpp ClapTrap.cpp FragTrap.cpp
+SRC		= ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
 OBJ		= $(SRC:.cpp=.o)
-HDR		= ClapTrap.hpp FragTrap.hpp
+HDR		= ClapTrap.hpp FragTrap.hpp ScavTrap.hpp
 NAME	= main
 
 all: $(NAME)
