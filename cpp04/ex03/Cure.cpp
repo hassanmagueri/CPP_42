@@ -1,41 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 22:55:16 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/03 20:46:09 by emagueri         ###   ########.fr       */
+/*   Created: 2024/10/05 11:52:20 by emagueri          #+#    #+#             */
+/*   Updated: 2024/10/05 14:59:11 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Cure.hpp"
 
-Animal::Animal()
+Cure::Cure()
 {
-    type = "Animal";
+    type = "cure";
+    std::cout << "Cure Created" << std::endl;
 }
 
-Animal::Animal(const Animal &other)
+Cure::Cure(const Cure &other)
 {
+    std::cout << "Cure Created" << std::endl;
     *this = other;
 }
 
-const std::string &Animal::getType() const
-{
-    return type;
-}
-
-Animal &Animal::operator=(const Animal &other)
+Cure &Cure::operator=(const Cure &other)
 {
     if (this != &other)
         this->type = other.type;
     return *this;
 }
-void Animal::makeSound() const
+
+AMateria *Cure::clone() const
 {
-    std::cout << "Animal sound!" << std::endl;
+    return (new Cure(*this));
 }
 
-Animal::~Animal() { }
+void Cure::use(ICharacter &target)
+{
+    std::cout << "* heals " << target.getName() <<  " ’s wounds *" << std::endl;
+}
+
+Cure::~Cure()
+{
+    std::cout << "Cure Destroyed" << std::endl;
+}

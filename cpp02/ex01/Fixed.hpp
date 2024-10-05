@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:30:02 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 18:22:14 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/02 21:33:19 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	Fixed(const int);
 	Fixed(const float);
 	Fixed(const Fixed &);
-	Fixed& operator=(const Fixed &);
+	Fixed& operator=(const Fixed &); 
 	~Fixed();
 	float	toFloat(void) const;
 	int		toInt(void) const;

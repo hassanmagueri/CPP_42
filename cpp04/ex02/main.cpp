@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 14:11:03 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/04 14:18:27 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/04 16:04:21 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int main()
 {
 	atexit(f);
 
-	const Animal *j = new Dog();
-	const Animal *i = new Cat();
+	const AAnimal *j = new Dog();
+	const AAnimal *i = new Cat();
 	delete j; // 
 	delete i;
 	return (0);

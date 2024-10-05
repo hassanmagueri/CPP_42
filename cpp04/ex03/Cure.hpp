@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 11:38:56 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/02 21:14:13 by emagueri         ###   ########.fr       */
+/*   Created: 2024/10/05 11:39:35 by emagueri          #+#    #+#             */
+/*   Updated: 2024/10/05 15:39:00 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE_HPP__
-# define __ZOMBIE_HPP__
-# include <iostream>
+#ifndef CURE_HPP
+#define CURE_HPP 
 
-class Zombie{
-	private:
-		std::string name;
-	public:
-					Zombie();
-					Zombie(std::string name);
-		void		announce(void);
-		void		setName(std::string name);
-		~Zombie();
+#include "AMateria.hpp"
+
+class Cure: public AMateria
+{
+public:
+	Cure();
+	Cure(const Cure &other);
+	Cure &operator=(const Cure &other);
+	AMateria *clone() const;
+	void use(ICharacter& target);
+	~Cure();
 };
-
-Zombie* zombieHorde( int n, std::string name );
 
 #endif

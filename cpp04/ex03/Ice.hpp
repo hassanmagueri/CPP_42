@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 11:38:56 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/02 21:14:13 by emagueri         ###   ########.fr       */
+/*   Created: 2024/10/05 11:39:35 by emagueri          #+#    #+#             */
+/*   Updated: 2024/10/05 20:03:41 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE_HPP__
-# define __ZOMBIE_HPP__
-# include <iostream>
+#ifndef ICE_HPP
+#define ICE_HPP
+#include "AMateria.hpp"
 
-class Zombie{
-	private:
-		std::string name;
-	public:
-					Zombie();
-					Zombie(std::string name);
-		void		announce(void);
-		void		setName(std::string name);
-		~Zombie();
+class Ice: public AMateria
+{
+public:
+	Ice();
+	Ice(const Ice &other);
+	Ice &operator=(const Ice &other);
+	AMateria *clone() const;
+	std::string const &getType() const;
+	void use(ICharacter& target);
+	~Ice();
 };
-
-Zombie* zombieHorde( int n, std::string name );
 
 #endif

@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 23:13:42 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/04 16:05:26 by emagueri         ###   ########.fr       */
+/*   Created: 2024/10/02 22:55:16 by emagueri          #+#    #+#             */
+/*   Updated: 2024/10/04 15:55:49 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
 #include "AAnimal.hpp"
-#include "Brain.hpp"
 
-class Dog : public AAnimal
+AAnimal::AAnimal()
 {
-private:
-    Brain *brain;
-public:
-    Dog();
-    Dog(const Dog &);
-    Dog &operator=(const Dog &);
-    // const std::string &getType(void);
-    void makeSound() const;
-    ~Dog();
-};
+    type = "AAnimal";
+}
 
-#endif
+AAnimal::AAnimal(const AAnimal &other)
+{
+    *this = other;
+}
+
+const std::string &AAnimal::getType() const
+{
+    return type;
+}
+
+AAnimal &AAnimal::operator=(const AAnimal &other)
+{
+    if (this != &other)
+        this->type = other.type;
+    return *this;
+}
+void AAnimal::makeSound() const
+{
+    std::cout << "AAnimal sound!" << std::endl;
+}
+
+AAnimal::~AAnimal() { }

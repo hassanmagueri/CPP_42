@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 11:38:56 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/02 21:14:13 by emagueri         ###   ########.fr       */
+/*   Created: 2024/10/05 12:23:24 by emagueri          #+#    #+#             */
+/*   Updated: 2024/10/05 14:39:28 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ZOMBIE_HPP__
-# define __ZOMBIE_HPP__
-# include <iostream>
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
-class Zombie{
-	private:
-		std::string name;
-	public:
-					Zombie();
-					Zombie(std::string name);
-		void		announce(void);
-		void		setName(std::string name);
-		~Zombie();
+#include <iostream>
+#include "AMateria.hpp"
+
+class AMateria;
+
+class ICharacter
+{
+public:
+    virtual ~ICharacter() {}
+    virtual std::string const &getName() const = 0;
+    virtual void equip(AMateria *m) = 0;
+    virtual void unequip(int idx) = 0;
+    virtual void use(int idx, ICharacter &target) = 0;
 };
-
-Zombie* zombieHorde( int n, std::string name );
 
 #endif

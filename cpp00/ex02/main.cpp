@@ -6,4 +6,5 @@ int main()
     int	const *d = arr;
     std::cout << sizeof(d) << std::endl;
     std::cout << sizeof(arr) << std::endl;
+    
 }
