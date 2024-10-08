@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 21:35:25 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/04 14:09:53 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/08 10:37:19 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Brain::Brain()
 
 Brain::Brain(const Brain &other)
 {
-    std::cout << "Brain: construction" << std::endl;
+    std::cout << "Brain created!" << std::endl;
     *this = other;
 }
 

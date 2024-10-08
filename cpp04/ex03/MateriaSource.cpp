@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 16:19:17 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/05 20:28:38 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:04:57 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 MateriaSource::MateriaSource()
 {
+	std::cout << "MateriaSource Created" << std::endl;
 	for (int i = 0; i < NUM_SLOTS; i++)
 		materiaSlots[i] = NULL;
-	std::cout << "MateriaSource Created" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &other)
@@ -71,4 +71,3 @@ MateriaSource::~MateriaSource()
 		delete materiaSlots[i];
 	std::cout << "MateriaSource Destroyed" << std::endl;
 }
-

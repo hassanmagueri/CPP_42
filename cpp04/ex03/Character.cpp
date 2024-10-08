@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 12:35:46 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/05 20:28:50 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/08 10:38:05 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Character::Character()
 {
     for (int i = 0; i < NUM_SLOTS; i++)
         materiaSlots[i] = NULL;
-    std::cout << "Character Created" << std::endl;
+    std::cout << "Character Created!" << std::endl;
 }
 
 Character::Character(std::string const &name)
@@ -35,12 +35,12 @@ Character::Character(std::string const &name)
     for (int i = 0; i < NUM_SLOTS; i++)
         materiaSlots[i] = NULL;
     this->name = name;
-    std::cout << "Character Created" << std::endl;
+    std::cout << "Character Created!" << std::endl;
 }
 
 Character::Character(const Character &other)
 {
-    std::cout << "Character Created" << std::endl;
+    std::cout << "Character Created!" << std::endl;
     *this = other;
 }
 
@@ -90,5 +90,5 @@ Character::~Character()
 {
 	for (int i = 0; i < NUM_SLOTS; i++)
 		delete materiaSlots[i];
-    std::cout << "Character Destroyed" << std::endl;
+    std::cout << "Character Destroyed!" << std::endl;
 }

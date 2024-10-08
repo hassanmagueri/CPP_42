@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cat.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:13:42 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/03 20:46:31 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/08 10:49:42 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ public:
     Cat &operator=(const Cat &);
     // const std::string &getType(void);
     void makeSound() const;
+    void fun() {std::cout << "I am cat";}
     ~Cat();
 };
 

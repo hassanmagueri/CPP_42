@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cat.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 22:55:16 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/03 20:47:15 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/08 10:25:31 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Cat::Cat()
 {
+    std::cout << "Cat Created" << std::endl;
     type = "Cat";
 }
 
@@ -34,4 +35,7 @@ void Cat::makeSound() const
     std::cout << "Cat sound! " << std::endl;
 }
 
-Cat::~Cat() { }
+Cat::~Cat()
+{
+    std::cout << "Cat Destroyed" << std::endl;
+}

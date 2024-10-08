@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 22:55:16 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/03 20:47:05 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/08 10:28:15 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Dog::Dog()
 {
+    std::cout << "Dog Created" << std::endl;
     type = "Dog";
 }
 
@@ -34,4 +35,7 @@ void Dog::makeSound() const
     std::cout << "Dog sound! " << std::endl;
 }
 
-Dog::~Dog() { }
+Dog::~Dog() 
+{
+    std::cout << "Dog Destroyed" << std::endl;
+}

@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 22:55:16 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/04 14:05:24 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/08 10:36:21 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Cat::Cat()
 
 Cat::Cat(const Cat &other)
 {
-    std::cout << "Dog created!" << std::endl;
+    std::cout << "Cat created!" << std::endl;
     brain = new Brain();
     *this = other;
 }
