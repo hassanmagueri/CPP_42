@@ -6,28 +6,30 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 12:35:51 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/05 18:08:45 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/10 20:28:51 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-#define ICHARACTER_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 #define NUM_SLOTS 4
 #include <iostream>
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
 
 class AMateria;
+class ICharacter;
 
-class ICharacter
-{
-public:
-    virtual ~ICharacter() {}
-    virtual std::string const &getName() const = 0;
-    virtual void equip(AMateria *m) = 0;
-    virtual void unequip(int idx) = 0;
-    virtual void use(int idx, ICharacter &target) = 0;
-    virtual void printMateriaSlots(void) = 0;
-};
+// class ICharacter
+// {
+// public:
+//     virtual ~ICharacter() {}
+//     virtual std::string const &getName() const = 0;
+//     virtual void equip(AMateria *m) = 0;
+//     virtual void unequip(int idx) = 0;
+//     virtual void use(int idx, ICharacter &target) = 0;
+//     virtual void printMateriaSlots(void) = 0;
+// };
 // problem
 
 

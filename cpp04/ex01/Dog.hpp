@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:13:42 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/04 11:49:34 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/10 17:32:00 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ public:
     Dog();
     Dog(const Dog &);
     Dog &operator=(const Dog &);
-    // const std::string &getType(void);
+    void setBrain(Brain const &);
+    const Brain *getBrain() const;
     void makeSound()  const;
     ~Dog();
 };

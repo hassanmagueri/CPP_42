@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:52:20 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/08 10:38:12 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/11 09:55:50 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 Cure::Cure()
 {
     type = "cure";
-    std::cout << "Cure Created!" << std::endl;
+    std::cout << "\033[90mCure Created!\033[0m" << std::endl;
 }
 
 Cure::Cure(const Cure &other)
 {
-    std::cout << "Cure Created!" << std::endl;
+    std::cout << "\033[90mCure Created!\033[0m" << std::endl;
     *this = other;
 }
 
@@ -38,10 +38,10 @@ AMateria *Cure::clone() const
 
 void Cure::use(ICharacter &target)
 {
-    std::cout << "* heals " << target.getName() <<  " ’s wounds *" << std::endl;
+    std::cout << "* heals \033[0m" << target.getName() <<  " ’s wounds *" << std::endl;
 }
 
 Cure::~Cure()
 {
-    std::cout << "Cure Destroyed" << std::endl;
+    std::cout << "\033[90mCure Destroyed\033[0m" << std::endl;
 }

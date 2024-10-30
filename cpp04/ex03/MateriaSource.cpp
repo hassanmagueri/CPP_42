@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 16:19:17 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/08 12:04:57 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/11 09:56:31 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource()
 {
-	std::cout << "MateriaSource Created" << std::endl;
+	std::cout << "\033[90mMateriaSource Created\033[0m" << std::endl;
 	for (int i = 0; i < NUM_SLOTS; i++)
 		materiaSlots[i] = NULL;
 }
@@ -28,6 +28,11 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 {
 	if (this != &other)
 	{
+		for(int i = 0; i < NUM_SLOTS; i++)
+		{
+			delete materiaSlots[i];
+			materiaSlots[i] = NULL;
+		}
 		for(int i = 0; i < NUM_SLOTS; i++)
 			this->materiaSlots[i] = other.materiaSlots[i];
 	}
@@ -52,9 +57,10 @@ void MateriaSource::learnMateria(AMateria *m)
         if (materiaSlots[i] == NULL)
         {
             materiaSlots[i] = m;
-            break;
+            return ;
         }
 	}
+	delete m;
 }
 
 AMateria *MateriaSource::createMateria(std::string const &type)
@@ -69,5 +75,5 @@ MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < NUM_SLOTS; i++)
 		delete materiaSlots[i];
-	std::cout << "MateriaSource Destroyed" << std::endl;
+	std::cout << "\033[90mMateriaSource Destroyed\033[0m" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:29:47 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 18:21:12 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/09 10:04:06 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ private:
 	static const int	_fracBits;
 	int					_fixedPoint;
 public:
-	Fixed();
+	Fixed();	
 	Fixed(const Fixed &);
 	Fixed& operator=(const Fixed &);
 	Fixed& operator++();

@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:52:20 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/05 20:11:11 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/11 09:56:11 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 Ice::Ice()
 {
 	type = "ice";
-	std::cout << "Ice Created" << std::endl;
+	std::cout << "\033[90mIce Created\033[0m" << std::endl;
 }
 
 Ice::Ice(const Ice &other)
 {
-	std::cout << "Ice Created" << std::endl;
+	std::cout << "\033[90mIce Created\033[0m" << std::endl;
 	*this = other;
 }
 
@@ -50,5 +50,5 @@ void Ice::use(ICharacter& target)
 
 Ice::~Ice()
 {
-	std::cout << "Ice Destroyed" << std::endl;
+	std::cout << "\033[90mIce Destroyed\033[0m" << std::endl;
 }

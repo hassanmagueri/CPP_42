@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 22:55:16 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/04 16:05:00 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:28:55 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 Dog::Dog()
 {
-    std::cout << "Dog created!" << std::endl;
+    std::cout << "\033[90mDog created!\033[0m" << std::endl;
     type = "Dog";
     brain = new Brain();
 }
 
 Dog::Dog(const Dog &other)
 {
-    std::cout << "Dog created!" << std::endl;
+    std::cout << "\033[90mDog created!\033[0m" << std::endl;
     brain = new Brain();
     *this = other;
 }
@@ -38,11 +38,11 @@ Dog &Dog::operator=(const Dog &other)
 
 void Dog::makeSound() const
 {
-    std::cout << "Dog sound! " << std::endl;
+    std::cout << "Dog sound!" << std::endl;
 }
 
 Dog::~Dog() 
 {
     delete brain;
-    std::cout << "Dog destroyed!" << std::endl;
+    std::cout << "\033[90mDog destroyed!\033[0m" << std::endl;
 }

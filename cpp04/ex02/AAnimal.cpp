@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 22:55:16 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/08 10:36:03 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/10 10:59:45 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 AAnimal::AAnimal()
 {
     type = "AAnimal";
-    std::cout << "AAnimal Created" << std::endl;
+    std::cout << "\033[90mAAnimal Created\033[0m" << std::endl;
 }
 
 AAnimal::AAnimal(const AAnimal &other)
 {
+    std::cout << "\033[90mAAnimal Created\033[0m" << std::endl;
     *this = other;
 }
 
@@ -36,10 +37,10 @@ AAnimal &AAnimal::operator=(const AAnimal &other)
 }
 void AAnimal::makeSound() const
 {
-    std::cout << "AAnimal sound!" << std::endl;
+    std::cout << "\033[90mAAnimal sound!" << std::endl;
 }
 
 AAnimal::~AAnimal()
 {
-    std::cout << "AAnimal Destroyed" << std::endl;
+    std::cout << "\033[90mAAnimal Destroyed\033[0m" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 22:55:16 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/08 10:22:43 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/10 14:50:55 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 Animal::Animal()
 {
-    std::cout << "Animal Created" << std::endl;
+    std::cout << "\033[90mAnimal Created!\033[0m" << std::endl;
     type = "Animal";
 }
 
 Animal::Animal(const Animal &other)
 {
+    std::cout << "\033[90mAnimal Created!\033[0m" << std::endl;
     *this = other;
 }
 
@@ -41,5 +42,5 @@ void Animal::makeSound() const
 
 Animal::~Animal()
 {
-    std::cout << "Animal Destroyed" << std::endl;
+    std::cout << "\033[90mAnimal Destroyed!\033[0m" << std::endl;
 }
