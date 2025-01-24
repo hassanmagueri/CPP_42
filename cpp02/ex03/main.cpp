@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:31:35 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/29 19:36:38 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/30 22:56:24 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void output(Point &a, Point &b, Point &c, Point p)
 
 int main()
 {
-	Point a(0, 20);
-	Point b(0, 0);
-	Point c(20,20);
+	Point const a(0, 0);
+	Point b(0, 3);
+	Point c(3,0);
 
-	output(a, b, c, Point(10, 10));
-	output(a, b, c, Point(1, 1.9f));
 	output(a, b, c, Point(-1, 1));
-	output(a, b, c, Point(20, 20));
+	// output(a, b, c, Point(1, 1.9f));
+	// output(a, b, c, Point(-1, 1));
+	// output(a, b, c, Point(20, 20));
 	
 	return 0;
 }

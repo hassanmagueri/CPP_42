@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:23:07 by emagueri          #+#    #+#             */
-/*   Updated: 2024/09/30 18:23:09 by emagueri         ###   ########.fr       */
+/*   Updated: 2024/10/30 22:54:53 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 Fixed getArea(Point p1, Point p2, Point p3)
 {
 	Fixed area;
-
-	Fixed n = (p1.getX() * (p2.getY() - p3.getY())).toFloat() + // 110.11111111 00000000
-			  (p2.getX() * (p3.getY() - p1.getY())).toFloat() + // 110.01001001 00000000
-			  (p3.getX() * (p1.getY() - p2.getY())).toFloat();
+	std::cout << "--- "<<(p1.getX() * (p2.getY() - p3.getY())).toFloat()<<std::endl;
+	
+	Fixed n = (p1.getX() * (p2.getY() - p3.getY())).toFloat() + (p2.getX() * (p3.getY() - p1.getY())).toFloat() +(p3.getX() * (p1.getY() - p2.getY())).toFloat();
 	if (n < 0)
 		n = n * Fixed(-1);
 	area = Fixed(0.5f) * n;
