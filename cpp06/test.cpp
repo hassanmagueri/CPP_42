@@ -1,11 +1,12 @@
 #include <iostream>
-#include <limits>
+#include <cstdlib>
+using namespace std;
 
-int main(int argc, char const *argv[])
-{
-    // std::cout << ¨hello ;
-    
-    float f = -.5f;
-    std::cout << "f: " << f;
+int main() {
+
+    srand(time(0));
+    int n = (rand() % 3);
+    if (n == 0)
+    cout << n;
     return 0;
 }

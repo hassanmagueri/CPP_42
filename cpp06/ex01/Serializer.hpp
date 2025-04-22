@@ -5,12 +5,12 @@
 
 struct Data
 {
-    char c;
+    int n;
 };
 
 class Serializer
 {
     public:
     static uintptr_t serialize(Data* ptr);
-    // static Data* deserialize(uintptr_t raw);
+    static Data* deserialize(uintptr_t raw);
 };

@@ -2,9 +2,13 @@
 
 int main()
 {
-    Data *d = new Data();
-    // d->num = 10;
-    Serializer::serialize(d);
+    Data *data = NULL;
+    // data->n = 10;
+    uintptr_t ptr = Serializer::serialize(data);
+    Data *newData = Serializer::deserialize(ptr);
+    std::cout << "newData->n " << ptr << std::endl; 
+
+    // std::cout << "newData->n " << newData->n << std::endl; 
+    delete data;
     return 0;
-    
 }
