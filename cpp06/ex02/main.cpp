@@ -18,12 +18,40 @@ Base *generate()
 
 void identify(Base* p)
 {
-    std::cout << p->getType() << std::endl;
+    if (dynamic_cast<A*>(p))
+        std::cout << "POINTER IDENTIFY CLASS: this is A instance\n";
+    if (dynamic_cast<B*>(p))
+        std::cout << "POINTER IDENTIFY CLASS: this is B instance\n";
+    if (dynamic_cast<C*>(p))
+        std::cout << "POINTER IDENTIFY CLASS: this is C instance\n";
 }
 
 void identify(Base& p)
 {
-    std::cout << p.getType() << std::endl;
+    try
+    {
+        A a = dynamic_cast<A&>(p);
+        std::cout << "REFERENCE IDENTIFY CLASS: this is A instance\n";
+        a.~A();
+        return ;
+    }
+    catch(const std::exception& e) {    }
+    try
+    {
+        B b = dynamic_cast<B&>(p);
+        std::cout << "REFERENCE IDENTIFY CLASS: this is B instance\n";
+        b.~B();
+        return ;
+    }
+    catch(const std::exception& e) {    }
+    try
+    {
+        C c = dynamic_cast<C&>(p);
+        std::cout << "REFERENCE IDENTIFY CLASS: this is C instance\n";
+        c.~C();
+    }
+    catch(const std::exception& e) {    }
+    
 }
 
 int main()

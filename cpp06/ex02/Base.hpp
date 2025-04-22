@@ -7,6 +7,5 @@ class Base
 {   
 public:
     virtual ~Base();
-    virtual std::string getType() const = 0;
 };
 
