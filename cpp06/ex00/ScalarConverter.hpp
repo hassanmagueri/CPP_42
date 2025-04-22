@@ -14,6 +14,17 @@
 #define SCALARCONVERTER_HPP
 #include <iostream>
 #include <string>
+#include <sstream>
+#include <limits>
+
+enum e_type
+{
+    CHAR,
+    INT,
+    FLOAT,
+    DOUBLE,
+    NONE
+};
 
 class ScalarConverter
 {
@@ -25,5 +36,12 @@ class ScalarConverter
     // ~ScalarConverter();
 
 };
+bool isInt(const std::string &str, int index);
+bool isDouble(const std::string &str);
+bool isFloat(const std::string &str);
+bool isChar(const std::string &str);
+
+e_type getTypeInp(const std::string &str);
+void printType(e_type type);
 
 #endif

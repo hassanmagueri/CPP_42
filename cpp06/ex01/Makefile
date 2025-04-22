@@ -11,9 +11,9 @@
 # **************************************************************************** #
 
 CPP		= c++ -Wall -Wextra -Werror -std=c++98
-SRC		= main.cpp ScalarConverter.cpp types.cpp
+SRC		= main.cpp Serializer.cpp
 OBJ		= $(SRC:.cpp=.o) 
-HDR		= ScalarConverter.hpp
+HDR		= Serializer.hpp
 NAME	= main
 
 all: $(NAME)
