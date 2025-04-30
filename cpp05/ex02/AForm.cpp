@@ -19,8 +19,17 @@ AForm::AForm():
 }
 
 AForm::AForm(const std::string name, const int gradeToSign, const int gradeToExecute):
-	name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute) // !!!!! check grade
+	name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {   
+	isSigned = false;
+	gradeIsValid(gradeToSign); //!! sign should be more than execute
+	gradeIsValid(gradeToExecute);
+}
+
+AForm::AForm(const std::string name, const int gradeToSign, const int gradeToExecute, std::string target):
+	name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
+{   
+	this->_target = target;
 	isSigned = false;
 	gradeIsValid(gradeToSign); //!! sign should be more than execute
 	gradeIsValid(gradeToExecute);
@@ -29,7 +38,8 @@ AForm::AForm(const std::string name, const int gradeToSign, const int gradeToExe
 AForm::AForm(const AForm &other):
 	name(other.name), gradeToSign(other.gradeToSign), gradeToExecute(other.gradeToExecute)
 {
-	isSigned = 0;
+	isSigned = other.isSigned;
+	this->_target = other._target;
 }
 
 AForm &AForm::operator=(const AForm &other)
@@ -37,6 +47,7 @@ AForm &AForm::operator=(const AForm &other)
 	if (this != &other)
 	{
 		this->isSigned = other.isSigned;
+		this->_target = other._target;
 	}
 	return *this;
 }
@@ -56,6 +67,11 @@ int AForm::getGradeToSign() const { return gradeToSign; }
 
 int AForm::getGradeToExecute() const { return gradeToExecute; }
 
+const std::string &AForm::getTarget() const
+{
+	return this->_target;
+}
+
 // ---------- members functions ----------
 
 void AForm::gradeIsValid(int value)
@@ -74,23 +90,23 @@ void AForm::beSigned(Bureaucrat const &b)
 		throw AForm::GradeTooLowException();
 }
 
-void AForm::executeThrowException(const Bureaucrat executor, int signGrade) const
+void AForm::executeThrowException(const Bureaucrat executor, int executeGrade) const
 {
-	if (executor.getGrade() > signGrade)
-		throw AForm::GradeTooLowException();
-	if (!this->getIsSigned())
+	if (this->getIsSigned() == false)
 		throw std::runtime_error("Form not signed yet");
+	if (executor.getGrade() > executeGrade)
+		throw AForm::GradeTooLowException();
 }
 
 // ------- Exception classes 
 
 
-const char *AForm::GradeTooHighException::what() const _NOEXCEPT
+const char *AForm::GradeTooHighException::what() const throw()
 {
     return "grade too high";
 }
 
-const char *AForm::GradeTooLowException::what() const _NOEXCEPT
+const char *AForm::GradeTooLowException::what() const throw()
 {
     return "grade too low";
 }

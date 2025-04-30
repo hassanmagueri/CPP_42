@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 18:56:38 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/21 22:42:55 by emagueri         ###   ########.fr       */
+/*   Updated: 2025/04/29 17:41:09 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 	public:
-		const char *what() const _NOEXCEPT;
+		virtual const char *what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 	public:
-		const char *what() const _NOEXCEPT;
+		virtual const char *what() const throw();
 	};
 };
 

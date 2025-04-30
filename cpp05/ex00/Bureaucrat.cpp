@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 21:25:12 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/19 18:25:16 by emagueri         ###   ########.fr       */
+/*   Updated: 2025/04/29 17:23:36 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,12 @@ Bureaucrat::~Bureaucrat()
 
 // ``````````````
 
-const char *Bureaucrat::GradeTooHighException::what() const _NOEXCEPT
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
     return "grade too high";
 }
 
-const char *Bureaucrat::GradeTooLowException::what() const _NOEXCEPT
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
     return "grade too low";
 }

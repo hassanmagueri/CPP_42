@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 18:35:07 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/22 18:54:16 by emagueri         ###   ########.fr       */
+/*   Updated: 2025/04/30 15:37:12 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,16 @@ private:
 	bool isSigned;
 	const int gradeToSign;
 	const int gradeToExecute;
+	std::string _target;
 	
 
 protected:
-	std::string _target;
 	void gradeIsValid(int value);
+	const std::string &getTarget() const;
 public:
 	// constracters
 	AForm();
+	AForm(std::string const name, const int gradeToSign, const int gradeToExecute, std::string target);
 	AForm(std::string const name, const int gradeToSign, const int gradeToExecute);
 	AForm(const AForm &other);
 	AForm &operator=(const AForm &other);
@@ -47,20 +49,20 @@ public:
 	
 	// member functions
 	void beSigned(Bureaucrat const &b);  // AForm::GradeTooLowException
-	void executeThrowException(const Bureaucrat executor, int signGrade) const;
+	void executeThrowException(const Bureaucrat executor, int executeGrade) const;
 	virtual void execute(Bureaucrat const &) const = 0;
 
 	// exceptions
 	class GradeTooLowException:public std::exception
 	{
 	public:
-		const char *what() const _NOEXCEPT;
+		virtual const char *what() const throw();
 	};
 	
 	class GradeTooHighException: public std::exception
 	{
 	public:
-		const char *what() const _NOEXCEPT;
+		virtual const char *what() const throw();
 	};
 };
 

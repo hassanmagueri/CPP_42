@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-#define PRESIDENTIALPARDONFORM_HPP
+#ifndef PresidentialPardonForm_HPP
+#define PresidentialPardonForm_HPP
 
 #include "AForm.hpp"
 #include <fstream>
@@ -20,8 +20,8 @@
 
 #undef signGrade
 #undef executeGrade
-#define signGrade 72
-#define executeGrade 45
+#define signGrade 25
+#define executeGrade 5
 
 class Bureaucrat;
 
@@ -34,7 +34,7 @@ public:
     PresidentialPardonForm & operator=(const PresidentialPardonForm &);
     ~PresidentialPardonForm();
 
-    PresidentialPardonForm(const std::string &_target);
+    PresidentialPardonForm(std::string _target);
     void execute(Bureaucrat const &executor) const;
 };
 

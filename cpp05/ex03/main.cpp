@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 18:56:12 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/22 19:24:34 by emagueri         ###   ########.fr       */
+/*   Updated: 2025/04/30 17:37:38 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,27 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
+void f()
+{
+	system("leaks main");
+}
 int main()
 {
+	atexit(f);
 	try
 	{
-		Bureaucrat br("hassan", 1);
-
-		// ShrubberyCreationForm a;
-		RobotomyRequestForm a("hassan");
-		a.beSigned(br);
-		a.execute(br);
-		std::cout << a << std::endl;
-		
-		// AForm *f = ShrubberyCreationForm::clone();
-		
-
-		// ShrubberyCreationForm b("abc");
-		// std::cout << b << std::endl;
-		// b = a;
-		// std::cout << b << std::endl;
+		Intern i;
+		AForm *f = i.makeForm("shrubbery creation", "form");
+		Bureaucrat br("hassan", 10);
+		f->beSigned(br);
+		f->execute(br);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << "Exception: " << e.what() << '\n';
 	}
+	
 	
 }

@@ -20,8 +20,8 @@
 
 #undef signGrade
 #undef executeGrade
-#define signGrade 72
-#define executeGrade 45
+#define signGrade 25
+#define executeGrade 5
 
 class Bureaucrat;
 

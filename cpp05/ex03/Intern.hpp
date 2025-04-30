@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 17:19:36 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/22 19:27:23 by emagueri         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:52:04 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ AForm *newShrubberyCreation(const std::string &target);
 
 class Intern
 {
+    public:
     Intern();
     Intern(const Intern &);
     Intern &operator=(Intern const &);

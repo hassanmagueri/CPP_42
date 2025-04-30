@@ -17,32 +17,29 @@ PresidentialPardonForm::PresidentialPardonForm()
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &_target)
-	:AForm("presidential pardon", signGrade, executeGrade)
+PresidentialPardonForm::PresidentialPardonForm(std::string target)
+	:AForm("presidential pardon", signGrade, executeGrade, target)
 {
-	this->_target = _target;
+	// this->_target = target;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &other):
 	AForm(other)
 {
-	if (this != &other)
-		this->_target = other._target;
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other)
 {
 	
 	AForm::operator=(other);
-	this->_target = other._target;
 	return *this;
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	executeThrowException(executor, signGrade);
+	executeThrowException(executor, executeGrade);
     
-    std::cout << this->_target << ": has been pardoned by Zaphod Beeblebrox.\n";
+    std::cout << this->getTarget() << ": has been pardoned by Zaphod Beeblebrox.\n";
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() { }

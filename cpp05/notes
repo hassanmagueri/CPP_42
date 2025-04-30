@@ -3,3 +3,7 @@ const operator= in ex01 bureaucrat class
 rand()
 
 check grades
+
+set be signed to 1 in signForm()
+
+Pure virtual function

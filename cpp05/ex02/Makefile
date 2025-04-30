@@ -13,7 +13,7 @@ $(NAME): $(OBJ)
 	$(CPP) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) *_shrubbery
 
 fclean: clean
 	rm -f $(NAME)

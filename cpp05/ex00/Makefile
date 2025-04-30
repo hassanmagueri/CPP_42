@@ -1,4 +1,4 @@
-CPP		= c++ -Wall -Wextra -Werror -std=c++98
+CPP		= c++ -Wall -Wextra -Werror -std=c++98 -g -fsanitize=address
 SRC		= main.cpp Bureaucrat.cpp
 OBJ		= $(SRC:.cpp=.o) 
 HDR		= Bureaucrat.hpp

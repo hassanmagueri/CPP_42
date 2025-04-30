@@ -1,9 +1,0 @@
-rm -f main.o Bureaucrat.o AForm.o ShrubberyCreationForm.o RobotomyRequestForm.o Intern.o 
-rm -f main
-c++ -Wall -Wextra -Werror -std=c++98 -v -c main.cpp -o main.o
-c++ -Wall -Wextra -Werror -std=c++98 -v -c Bureaucrat.cpp -o Bureaucrat.o
-c++ -Wall -Wextra -Werror -std=c++98 -v -c AForm.cpp -o AForm.o
-c++ -Wall -Wextra -Werror -std=c++98 -v -c ShrubberyCreationForm.cpp -o ShrubberyCreationForm.o
-c++ -Wall -Wextra -Werror -std=c++98 -v -c RobotomyRequestForm.cpp -o RobotomyRequestForm.o
-c++ -Wall -Wextra -Werror -std=c++98 -v -c Intern.cpp -o Intern.o
-c++ -Wall -Wextra -Werror -std=c++98 -v main.o Bureaucrat.o AForm.o ShrubberyCreationForm.o RobotomyRequestForm.o Intern.o  -o main

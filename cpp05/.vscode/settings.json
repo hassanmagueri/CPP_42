@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "test": "txt",
         "exception": "cpp",
         "__config": "cpp",
         "__bit_reference": "cpp",
@@ -64,6 +65,8 @@
         "fstream": "cpp",
         "deque": "cpp",
         "iomanip": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "filesystem": "cpp",
+        "__memory": "cpp"
     }
 }

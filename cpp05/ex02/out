@@ -1,0 +1,12 @@
+9c9
+< /*   Updated: 2025/04/30 15:37:12 by emagueri         ###   ########.fr       */
+---
+> /*   Updated: 2025/04/30 15:34:49 by emagueri         ###   ########.fr       */
+29d28
+< 	std::string _target;
+32a32
+> 	std::string _target;
+34d33
+< 	const std::string &getTarget() const;
+38d36
+< 	AForm(std::string const name, const int gradeToSign, const int gradeToExecute, std::string target);

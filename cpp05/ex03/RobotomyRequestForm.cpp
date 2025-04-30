@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 15:58:59 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/22 17:14:43 by emagueri         ###   ########.fr       */
+/*   Updated: 2025/04/30 15:23:39 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,13 @@ RobotomyRequestForm::RobotomyRequestForm()
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string _target)
-	:AForm("robotomy request", signGrade, executeGrade)
+	:AForm("robotomy request", signGrade, executeGrade, _target)
 {
-	this->_target = _target;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other):
 	AForm(other)
 {
-	if (this != &other)
-		this->_target = other._target;
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other)
@@ -38,21 +35,21 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 	
 	AForm::operator=(other);
 	// is signed should also change either it is in private
-	this->_target = other._target;
+	// this->_target = other._target;
 	return *this;
 }
 
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
-	executeThrowException(executor, signGrade);
+	executeThrowException(executor, executeGrade);
     
     std::srand(time(0));
 	
     int r = std::rand();
 	if (r % 2 == 0)
-        std::cout << this->_target << ": has been robotomized successfully.\n";
+        std::cout << this->getTarget() << ": has been robotomized successfully.\n";
 	else
-        std::cout << this->_target << ": has been robotomy failed.\n";
+        std::cout << this->getTarget() << ": has been robotomy failed.\n";
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() { }

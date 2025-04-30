@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/19 18:35:44 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/20 15:44:38 by emagueri         ###   ########.fr       */
+/*   Updated: 2025/04/29 19:43:10 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ Form::Form(const std::string name, const int gradeToSign, const int gradeToExecu
 Form::Form(const Form &other):
 	name(other.name), gradeToSign(other.gradeToSign), gradeToExecute(other.gradeToExecute)
 {
-	isSigned = 0; /// !!!!!! it's maybe something else
-	// isSigned = other.isSigned; 
+	isSigned = other.isSigned;
 }
 
 Form &Form::operator=(Form &other)
@@ -77,13 +76,12 @@ void Form::beSigned(Bureaucrat const &b)
 
 // ------- Exception classes 
 
-
-const char *Form::GradeTooHighException::what() const _NOEXCEPT
+const char *Form::GradeTooHighException::what() const throw()
 {
     return "grade too high";
 }
 
-const char *Form::GradeTooLowException::what() const _NOEXCEPT
+const char *Form::GradeTooLowException::what() const throw()
 {
     return "grade too low";
 }
