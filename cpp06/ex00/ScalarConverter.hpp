@@ -6,7 +6,7 @@
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 19:55:30 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/27 22:00:42 by emagueri         ###   ########.fr       */
+/*   Updated: 2025/05/02 18:42:07 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <sstream>
 #include <limits>
+#include <iostream>
+#include <iomanip>
 
 enum e_type
 {
@@ -23,17 +25,21 @@ enum e_type
     INT,
     FLOAT,
     DOUBLE,
+    INF,
     NONE
 };
 
 class ScalarConverter
 {
+    private:
+    ScalarConverter();
+    ScalarConverter(ScalarConverter &);
+    ScalarConverter &operator=(ScalarConverter const &);
+    ~ScalarConverter();
+    
+    
     public:
     static void convert(std::string str);
-    // ScalarConverter();
-    // ScalarConverter(ScalarConverter &other);
-    // ScalarConverter &operator=(ScalarConverter const &other);
-    // ~ScalarConverter();
 
 };
 bool isInt(const std::string &str, int index);

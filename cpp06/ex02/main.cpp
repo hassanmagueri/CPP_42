@@ -6,7 +6,7 @@ Base *generate()
 {
     Base *der = NULL;
     srand(time(0));
-    int n = rand() % 3;
+    int n = rand() % 1;
     if (n == 0)
         der = new A();
     else if (n == 1)
@@ -20,10 +20,12 @@ void identify(Base* p)
 {
     if (dynamic_cast<A*>(p))
         std::cout << "POINTER IDENTIFY CLASS: this is A instance\n";
-    if (dynamic_cast<B*>(p))
+    else if (dynamic_cast<B*>(p))
         std::cout << "POINTER IDENTIFY CLASS: this is B instance\n";
-    if (dynamic_cast<C*>(p))
+    else if (dynamic_cast<C*>(p))
         std::cout << "POINTER IDENTIFY CLASS: this is C instance\n";
+    else
+        std::cout << "POINTER IDENTIFY CLASS: NULL\n";
 }
 
 void identify(Base& p)
@@ -54,11 +56,13 @@ void identify(Base& p)
     
 }
 
+void f(){system("leaks main");}
+
 int main()
 {
     Base *d = generate();
-    identify(d);
-    // Base &refd = *d;
     identify(*d);
+    identify(d);
+    delete d;
     return 0;
 }

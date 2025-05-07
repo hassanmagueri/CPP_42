@@ -5,12 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/03 11:26:37 by emagueri          #+#    #+#              #
-#    Updated: 2025/04/25 20:49:34 by emagueri         ###   ########.fr        #
+#    Created: 2025/05/05 18:40:37 by emagueri          #+#    #+#              #
+#    Updated: 2025/05/05 18:40:38 by emagueri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CPP		= c++ -Wall -Wextra -Werror #-std=c++98
+
+
+CPP		= c++ -Wall -Wextra -Werror -std=c++98
 SRC		= main.cpp
 OBJ		= $(SRC:.cpp=.o) 
 HDR		= easyfind.hpp

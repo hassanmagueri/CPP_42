@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/05 15:49:50 by emagueri          #+#    #+#             */
+/*   Updated: 2025/05/05 15:49:51 by emagueri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <exception>
 
 template <typename T>
@@ -6,13 +18,13 @@ class Array
     private:
     
     T *arr;
-    const unsigned int len;
+    unsigned int len;
 
     public:
 
     Array():len(0)
     {
-        arr = new T;
+        arr = new T();
     }
 
     ~Array()
@@ -22,27 +34,39 @@ class Array
 
     Array(unsigned int n):len(n)
     {
-        arr = new T[n];
+        arr = new T[n]();
     }
 
-    Array(Array &other): len(other.len)
+    Array(const Array &other): len(other.len)
     {
         this->arr = new T[len];
         for (unsigned int i = 0; i < this->len; i++)
             this->arr[i] = other.arr[i];
     }
 
-    Array &operator=(Array &other)
+    Array &operator=(const Array &other)
     {
-        this->arr = new T[other.len];
-        this->len = other.len;
-        for (unsigned int i = 0; i < this->len; i++)
-            this->arr[i] = other.arr[i];
+        if (this != &other)
+        {
+            delete[] arr;
+            this->arr = new T[other.len];
+            this->len = other.len;
+            for (unsigned int i = 0; i < this->len; i++)
+                this->arr[i] = other.arr[i];
+        }
+        return *this;
     }
 
     T &operator[](size_t i)
     {
-        if (i >= len) // no need to check less than 0 due size_t underflow when pass to it negative value
+        if (i >= len)
+            throw std::runtime_error("index out of range");
+        return arr[i];
+    }
+
+    const T &operator[](size_t i) const
+    {
+        if (i >= len)
             throw std::runtime_error("index out of range");
         return arr[i];
     }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
+/*   types.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emagueri <emagueri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 20:01:44 by emagueri          #+#    #+#             */
-/*   Updated: 2024/10/27 22:53:54 by emagueri         ###   ########.fr       */
+/*   Updated: 2025/05/02 18:44:03 by emagueri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ void printType(e_type type)
 
 e_type  getTypeInp(const std::string &str)
 {
+	if (str == "+inff" || str == "-inff" || str == "+inf" || str == "-inf")
+		return INF;
 	if (isChar(str))
 		return CHAR;
 	if (isInt(str, 0))
