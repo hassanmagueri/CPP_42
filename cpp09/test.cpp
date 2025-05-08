@@ -6,12 +6,24 @@
 using namespace std;
 
 
-int main() {
-    map<int, string> m = {{1, "Geeks"},
-    {3, "Geeksfor"}, {10, "GeeksforGeeks"}};
-  
-    auto it = prev(m.upper_bound(11));
+void removeSpaces(std::string &str, char c)
+{
+	size_t pos = str.find("|");
+	if (pos == std::string::npos || pos == 0)
+		return;
+	int i = pos - 1;
+	while(i >= 0 && str[i] == ' ')
+		str.erase(i--, 1);
+	pos = str.find("|");
+	i = pos + 1;
+	std::cout << str[i] << "]]" << std::endl;
+	while(i < str.length() && str[i] == ' ')
+		str.erase(i, 1);
+}
 
-    cout << it->first << ": " << it->second;
-    return 0;
+int main() {
+	std::string str = "20 0 0-01-033";
+	removeSpaces(str, '|');
+	std::cout << "str : " << str << std::endl;
+	return 0;
 }
